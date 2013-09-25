@@ -6,8 +6,6 @@ build
 *~.nib
 *~.xib 
 .DS_Store
-.DS_Store?
-._*
 Pods/*
 Podfile.lock
 *.xcworkspace
