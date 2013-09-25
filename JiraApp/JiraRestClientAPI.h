@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFHTTPClient.h>
+#import "JiraHTTPRequestOperation.h"
 
 
 @interface JiraRestClientAPI : AFHTTPClient
@@ -16,6 +17,7 @@
 -(void)getProjectsWithSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail;
 -(void)getProjectDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail;
 -(void)setAuthCredentials:(NSString*)username password:(NSString*)password;
+-(void)showErrorForAccessDenied:(int)statuscode;
 
 @end
 

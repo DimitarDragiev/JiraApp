@@ -21,6 +21,7 @@ static NSString *const JiraAppRequestCentreURLString = @"https://jira01.isdc.eu/
     dispatch_once(&onceToken, ^{
         _sharedClient = [[JiraRestClientAPI alloc] initWithBaseURL:[NSURL URLWithString:JiraAppRequestCentreURLString]];
     });
+    
     return _sharedClient;
 }
 
@@ -30,7 +31,7 @@ static NSString *const JiraAppRequestCentreURLString = @"https://jira01.isdc.eu/
         return nil;
     }
     
-    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [self registerHTTPOperationClass:[JiraHTTPRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
     [self setDefaultHeader:@"Content-type" value:@"application/json"];
     return self;
@@ -48,10 +49,19 @@ static NSString *const JiraAppRequestCentreURLString = @"https://jira01.isdc.eu/
             success(pm.projects);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
+        fail(error);
+        NSLog(@"%ld",(long)operation.response.statusCode);
     }];
 };
-
+-(void)showErrorForAccessDenied:(int)statuscode{
+    if(statuscode == 403){
+        [[[UIAlertView alloc]initWithTitle:@""
+                                   message:@"Incorrect username or password"
+                                   delegate:nil
+                                   cancelButtonTitle:@"OK"
+                                   otherButtonTitles:nil] show];
+    }
+}
 -(void)getProjectDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail{
     NSString *path = @"project/";
     NSString *path2 = [path stringByAppendingString: key];

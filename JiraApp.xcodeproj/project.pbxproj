@@ -29,6 +29,8 @@
 		3C336E4717EAF7020038166D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C336E4617EAF7020038166D /* LoginViewController.m */; };
 		3C86B3A317F06FAB00C289DD /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C86B3A217F06FAB00C289DD /* MainNavigationViewController.m */; };
 		3CA6A00817EC5C0B002F9917 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6A00617EC5C0B002F9917 /* KeychainItemWrapper.m */; };
+		3CEAC56817F3118400333B57 /* projects_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC56717F3118400333B57 /* projects_list.png */; };
+		3CEAC56B17F31CD500333B57 /* JiraHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAC56A17F31CD500333B57 /* JiraHTTPRequestOperation.m */; };
 		A3414B3817F18C9000D09F35 /* ProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3414B3717F18C9000D09F35 /* ProjectDetailsViewController.m */; };
 		A349E9D617F026E20045BBD7 /* JiraProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9D517F026E20045BBD7 /* JiraProjectDetailsViewController.m */; };
 		A349E9D917F027E00045BBD7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9D817F027E00045BBD7 /* User.m */; };
@@ -83,6 +85,9 @@
 		3C86B3A217F06FAB00C289DD /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		3CA6A00617EC5C0B002F9917 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		3CA6A00717EC5C0B002F9917 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		3CEAC56717F3118400333B57 /* projects_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projects_list.png; sourceTree = "<group>"; };
+		3CEAC56917F31CD500333B57 /* JiraHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiraHTTPRequestOperation.h; sourceTree = "<group>"; };
+		3CEAC56A17F31CD500333B57 /* JiraHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiraHTTPRequestOperation.m; sourceTree = "<group>"; };
 		52F38FB1931A417DA38FF7BF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3414B3617F18C9000D09F35 /* ProjectDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailsViewController.h; sourceTree = "<group>"; };
 		A3414B3717F18C9000D09F35 /* ProjectDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsViewController.m; sourceTree = "<group>"; };
@@ -134,6 +139,8 @@
 				3C2B114D17EB3D63000FBCFF /* Project.m */,
 				3C2B114F17EB461B000FBCFF /* ProjectManager.h */,
 				3C2B115017EB461B000FBCFF /* ProjectManager.m */,
+				3CEAC56917F31CD500333B57 /* JiraHTTPRequestOperation.h */,
+				3CEAC56A17F31CD500333B57 /* JiraHTTPRequestOperation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 		A399B3B917F03E8F0075D5DC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CEAC56717F3118400333B57 /* projects_list.png */,
 				3C18CD2917F30B2F0003E54C /* checkbox_checked.png */,
 				3C18CD2A17F30B2F0003E54C /* checkbox_unchecked.png */,
 				A399B3BA17F03E8F0075D5DC /* dosis-v1.7.zip */,
@@ -321,6 +329,7 @@
 				A3D5F5B517F2DBCD00C3D5CC /* arrow_right.png in Resources */,
 				3C18CD2B17F30B2F0003E54C /* checkbox_checked.png in Resources */,
 				3C18CD2C17F30B2F0003E54C /* checkbox_unchecked.png in Resources */,
+				3CEAC56817F3118400333B57 /* projects_list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +389,7 @@
 				A3414B3817F18C9000D09F35 /* ProjectDetailsViewController.m in Sources */,
 				3C18CD2517F301570003E54C /* TableViewPadded.m in Sources */,
 				3C18CD2817F305A10003E54C /* ProjectListCell.m in Sources */,
+				3CEAC56B17F31CD500333B57 /* JiraHTTPRequestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

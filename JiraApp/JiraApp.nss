@@ -70,7 +70,7 @@ Label {
 
 
 NavigationBar {
-    background-color: #FFFFFF;
+    background-color: #E5174B;
     font-color: white;
     font-name: @primaryFontNameBold;
     font-size: 22;
@@ -105,7 +105,7 @@ TabBarItem {
     text-offset: 0,-11;
 }
 Table{
-    separator-color: red;
+    separator-color: #7F848C;
 }
 TableCell {
     background-color-top: @secondaryBackgroundColorTop;
