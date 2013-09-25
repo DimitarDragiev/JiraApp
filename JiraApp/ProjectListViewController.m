@@ -10,6 +10,7 @@
 #import "ProjectManager.h"
 #import "Project.h"
 #import "ProjectDetailsViewController.h"
+#import "ProjectListCell.h"
 @interface ProjectListViewController ()
 
 @end
@@ -61,9 +62,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ProjectListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Project *project = [[self projectList] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [project name];
+    cell.titleLabel.text = [project name];
     // Configure the cell...
     
     return cell;

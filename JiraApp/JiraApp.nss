@@ -71,9 +71,9 @@ Label {
 
 NavigationBar {
     background-color: #FFFFFF;
+    font-color: white;
     font-name: @primaryFontNameBold;
     font-size: 22;
-    font-color: @primaryFontColor;
     text-shadow-color: clear;
 }
 SearchBar {
@@ -104,6 +104,9 @@ TabBarItem {
     font-size: 18;
     text-offset: 0,-11;
 }
+Table{
+    separator-color: red;
+}
 TableCell {
     background-color-top: @secondaryBackgroundColorTop;
     background-color-bottom: @secondaryBackgroundColorBottom;
@@ -123,11 +126,7 @@ TextField {
     border-style: none;
     border-color: @primaryBorderColor;
     border-width: 1;
-<<<<<<< HEAD
-    corner-radius: 10;
-=======
     corner-radius: 5;
->>>>>>> db5e1f4cf7f080f2430006defc4c33863b69973b
     padding: 5;
     vertical-align: center;
 }
@@ -143,7 +142,6 @@ CheckboxButton{
 }
 
 LoginTextField{
-    background-color:red;
-    padding:15;
-    height: 50;
+    padding:5 5 5 50;
+    height: 60;
 }
