@@ -11,6 +11,13 @@
 
 @implementation LoginTextField
 
+- (id) initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if(self){
+         self.nuiClass = @"TextField:LoginTextField";
+    }
+    return self;
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -31,12 +38,6 @@
     //[self ]
 //    self.leftView.nuiClass = @"LoginTextFieldIcon";
 //    [NUIRenderer renderView:self.leftView];
-}
-- (CGRect)editingRectForBounds:(CGRect)bounds {
-    return CGRectInset( bounds , 50 , 0 );
-}
-- (CGRect)textRectForBounds:(CGRect)bounds {
-    return CGRectInset( bounds , 50 , 0 );
 }
 /*
 // Only override drawRect: if you perform custom drawing.

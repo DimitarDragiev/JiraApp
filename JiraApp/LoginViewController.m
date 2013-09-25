@@ -43,7 +43,9 @@
     [self.userName setIcon:[UIImage imageNamed:@"home_icon_user"]];
     [self.password setIcon:[UIImage imageNamed:@"home_icon_pass"]];
      keychain =[[KeychainItemWrapper alloc] initWithIdentifier:@"JiraAppLoginData" accessGroup:nil];
-    [userName setText:[keychain objectForKey:(__bridge id)(kSecAttrAccount)]];
+    id keychainItem = [keychain objectForKey:(__bridge id)(kSecAttrAccount)];
+    keychainItem = keychainItem && [keychainItem isKindOfClass:NSString.class] ? keychainItem : @"";
+    [userName setText:keychainItem];
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
@@ -78,13 +80,11 @@
     if(!checked){
         [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateNormal];
         checked = YES;
-        [keychain setObject:userName.text forKey:(__bridge id)kSecAttrAccount];
+        
     }
     else if(checked){
         [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
         checked = NO;
-        [keychain resetKeychainItem];
-        
     }
 }
 
@@ -97,6 +97,14 @@
     
     [[JiraRestClientAPI sharedClient] setAuthCredentials:userName.text password:password.text];    
    [[JiraRestClientAPI sharedClient] getProjectsWithSuccessBlock:^(NSArray* projects) {
+       if(rememberMeButton.selected){
+           [keychain setObject:userName.text forKey:(__bridge id)kSecAttrAccount];
+       }
+       else {
+           [keychain setObject:@"" forKey:(__bridge id)kSecAttrAccount];
+       }
+       
+       
        Project *project = [projects objectAtIndex:0];
        NSLog(@"%@", project);
       UINavigationController *navController =[self.storyboard instantiateViewControllerWithIdentifier:@"MainNavigationController"];

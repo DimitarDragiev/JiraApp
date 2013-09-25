@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C18CD2517F301570003E54C /* TableViewPadded.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18CD2417F301570003E54C /* TableViewPadded.m */; };
+		3C18CD2817F305A10003E54C /* ProjectListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18CD2717F305A10003E54C /* ProjectListCell.m */; };
+		3C18CD2B17F30B2F0003E54C /* checkbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C18CD2917F30B2F0003E54C /* checkbox_checked.png */; };
+		3C18CD2C17F30B2F0003E54C /* checkbox_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C18CD2A17F30B2F0003E54C /* checkbox_unchecked.png */; };
 		3C2B114817EB20BA000FBCFF /* JiraRestClientAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B114717EB20BA000FBCFF /* JiraRestClientAPI.m */; };
 		3C2B114A17EB2EB6000FBCFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2B114917EB2EB6000FBCFF /* Security.framework */; };
 		3C2B114E17EB3D63000FBCFF /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B114D17EB3D63000FBCFF /* Project.m */; };
@@ -44,6 +48,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C18CD2317F301570003E54C /* TableViewPadded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewPadded.h; sourceTree = "<group>"; };
+		3C18CD2417F301570003E54C /* TableViewPadded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewPadded.m; sourceTree = "<group>"; };
+		3C18CD2617F305A10003E54C /* ProjectListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListCell.h; sourceTree = "<group>"; };
+		3C18CD2717F305A10003E54C /* ProjectListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectListCell.m; sourceTree = "<group>"; };
+		3C18CD2917F30B2F0003E54C /* checkbox_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_checked.png; sourceTree = "<group>"; };
+		3C18CD2A17F30B2F0003E54C /* checkbox_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_unchecked.png; sourceTree = "<group>"; };
 		3C2B114617EB20BA000FBCFF /* JiraRestClientAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiraRestClientAPI.h; sourceTree = "<group>"; };
 		3C2B114717EB20BA000FBCFF /* JiraRestClientAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiraRestClientAPI.m; sourceTree = "<group>"; };
 		3C2B114917EB2EB6000FBCFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -190,6 +200,8 @@
 				3C2B114617EB20BA000FBCFF /* JiraRestClientAPI.h */,
 				3C2B114717EB20BA000FBCFF /* JiraRestClientAPI.m */,
 				3C336E3117EAF7020038166D /* Supporting Files */,
+				3C18CD2317F301570003E54C /* TableViewPadded.h */,
+				3C18CD2417F301570003E54C /* TableViewPadded.m */,
 			);
 			path = JiraApp;
 			sourceTree = "<group>";
@@ -214,6 +226,8 @@
 			children = (
 				A399B3B617F038E30075D5DC /* LoginTextField.h */,
 				A399B3B717F038E30075D5DC /* LoginTextField.m */,
+				3C18CD2617F305A10003E54C /* ProjectListCell.h */,
+				3C18CD2717F305A10003E54C /* ProjectListCell.m */,
 			);
 			name = VIews;
 			sourceTree = "<group>";
@@ -221,6 +235,8 @@
 		A399B3B917F03E8F0075D5DC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3C18CD2917F30B2F0003E54C /* checkbox_checked.png */,
+				3C18CD2A17F30B2F0003E54C /* checkbox_unchecked.png */,
 				A399B3BA17F03E8F0075D5DC /* dosis-v1.7.zip */,
 				A399B3BB17F03E8F0075D5DC /* home_bg_top.png */,
 				A399B3BC17F03E8F0075D5DC /* home_icon_pass.png */,
@@ -303,6 +319,8 @@
 				A399B3C817F03E8F0075D5DC /* login_button_blank.png in Resources */,
 				A399B3C917F03E8F0075D5DC /* logo.png in Resources */,
 				A3D5F5B517F2DBCD00C3D5CC /* arrow_right.png in Resources */,
+				3C18CD2B17F30B2F0003E54C /* checkbox_checked.png in Resources */,
+				3C18CD2C17F30B2F0003E54C /* checkbox_unchecked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +378,8 @@
 				A399B3B817F038E30075D5DC /* LoginTextField.m in Sources */,
 				3C86B3A317F06FAB00C289DD /* MainNavigationViewController.m in Sources */,
 				A3414B3817F18C9000D09F35 /* ProjectDetailsViewController.m in Sources */,
+				3C18CD2517F301570003E54C /* TableViewPadded.m in Sources */,
+				3C18CD2817F305A10003E54C /* ProjectListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

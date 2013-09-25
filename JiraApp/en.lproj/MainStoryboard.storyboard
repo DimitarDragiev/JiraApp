@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sWE-E7-NCZ" kind="relationship" relationship="rootViewController" id="0dZ-f8-Is6"/>
+                        <segue destination="cyF-o5-hm0" kind="relationship" relationship="rootViewController" id="jf8-IQ-XhN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUx-ah-S1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,16 +30,16 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-s3-oAW" customClass="LoginTextField">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbW-rC-pTU" customClass="LoginTextField">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4Q-6F-BXE">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="184" id="Gms-c1-6oc"/>
                                     <constraint firstAttribute="height" constant="43" id="cXG-um-CV7"/>
+                                    <constraint firstAttribute="width" constant="260" id="d5t-ux-T3v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="login_button.png">
@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="width" constant="187" id="3sN-1r-xN1"/>
                                     <constraint firstAttribute="height" constant="44" type="user" id="s6u-gS-FUT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="15"/>
                                 <state key="normal" title="  remember me" image="checkbox_unchecked.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,12 +74,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG1-0h-nQt">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="2m4-dc-IH2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M03-G8-51J">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3fm-sK-aTN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -96,26 +102,27 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dbW-rC-pTU" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CIC-vY-sxa"/>
                             <constraint firstItem="mgx-s3-oAW" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ccc-fe-f2C"/>
+                            <constraint firstItem="N4Q-6F-BXE" firstAttribute="leading" secondItem="lvM-Ks-kQN" secondAttribute="leading" type="default" id="HCR-1Z-jwO"/>
                             <constraint firstAttribute="trailing" secondItem="mgx-s3-oAW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KtA-x3-gFr"/>
-                            <constraint firstItem="lvM-Ks-kQN" firstAttribute="leading" secondItem="N4Q-6F-BXE" secondAttribute="leading" type="default" id="P5r-gP-ctz"/>
                             <constraint firstItem="M03-G8-51J" firstAttribute="top" secondItem="mgx-s3-oAW" secondAttribute="bottom" constant="13" type="user" id="Rgc-sQ-Z5Z"/>
                             <constraint firstItem="nG1-0h-nQt" firstAttribute="top" secondItem="3" secondAttribute="top" constant="162" type="user" id="RwN-DW-qIs"/>
                             <constraint firstAttribute="trailing" secondItem="dbW-rC-pTU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UAQ-i7-l8H"/>
+                            <constraint firstItem="IGp-5V-4Cj" firstAttribute="centerX" secondItem="N4Q-6F-BXE" secondAttribute="centerX" type="default" id="Ubh-Co-zyL"/>
                             <constraint firstItem="IGp-5V-4Cj" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Y81-HO-zot"/>
+                            <constraint firstItem="N4Q-6F-BXE" firstAttribute="top" secondItem="lvM-Ks-kQN" secondAttribute="bottom" constant="8" type="user" id="a6H-LD-y1B"/>
                             <constraint firstItem="lvM-Ks-kQN" firstAttribute="top" secondItem="dbW-rC-pTU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="afa-ev-uM7"/>
+                            <constraint firstItem="mgx-s3-oAW" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="az9-YT-CYK"/>
                             <constraint firstItem="mgx-s3-oAW" firstAttribute="top" secondItem="nG1-0h-nQt" secondAttribute="bottom" constant="8" type="user" id="g88-bd-OfK"/>
-                            <constraint firstItem="N4Q-6F-BXE" firstAttribute="top" secondItem="lvM-Ks-kQN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hAu-ZF-Oqe"/>
+                            <constraint firstItem="N4Q-6F-BXE" firstAttribute="top" secondItem="lvM-Ks-kQN" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="hAu-ZF-Oqe"/>
                             <constraint firstAttribute="bottom" secondItem="N4Q-6F-BXE" secondAttribute="bottom" constant="152" id="ivY-11-rBl"/>
                             <constraint firstItem="IGp-5V-4Cj" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="jt9-Xo-8hw"/>
                             <constraint firstItem="IGp-5V-4Cj" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="lif-1I-rPV"/>
                             <constraint firstItem="M03-G8-51J" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mbd-vC-2Tt"/>
                             <constraint firstItem="nG1-0h-nQt" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qDU-aq-Xs9"/>
-                            <constraint firstItem="mgx-s3-oAW" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="rex-yj-Idr"/>
-                            <constraint firstItem="lvM-Ks-kQN" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="31" id="sdZ-jG-xiq"/>
                             <constraint firstItem="JAW-gh-gRb" firstAttribute="top" secondItem="3" secondAttribute="top" constant="16" id="shz-ts-6oM"/>
                             <constraint firstItem="JAW-gh-gRb" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="54" id="xha-Iv-6Dz"/>
                             <constraint firstItem="dbW-rC-pTU" firstAttribute="top" secondItem="M03-G8-51J" secondAttribute="bottom" constant="8" type="user" id="y4S-hF-JeX"/>
@@ -133,23 +140,23 @@
             </objects>
             <point key="canvasLocation" x="-459" y="-83"/>
         </scene>
-        <!--Project List View Controller-->
+        <!--Project List View Controller - Projects-->
         <scene sceneID="iyN-tp-EAf">
             <objects>
-                <tableViewController id="sWE-E7-NCZ" customClass="ProjectListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="fAt-CT-rHO">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                <tableViewController title="Projects" id="sWE-E7-NCZ" customClass="ProjectListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fAt-CT-rHO" customClass="TableViewPadded">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ecC-zg-VAI" rowHeight="50" style="IBUITableViewCellStyleDefault" id="gbJ-dG-keu">
-                                <rect key="frame" x="0.0" y="22" width="320" height="50"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="IJc-zY-c30" style="IBUITableViewCellStyleDefault" id="gbJ-dG-keu" customClass="ProjectListCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-zg-VAI">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJc-zY-c30">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,18 +174,19 @@
                             <outlet property="delegate" destination="sWE-E7-NCZ" id="nCy-9w-CaY"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="vcn-K2-yt9"/>
                     <navigationItem key="navigationItem" id="8RU-I9-thY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAC-wm-HZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="-75"/>
+            <point key="canvasLocation" x="770" y="460"/>
         </scene>
         <!--Project Details View Controller-->
         <scene sceneID="ehW-tu-Io0">
             <objects>
                 <tableViewController id="Vtj-xu-saY" customClass="ProjectDetailsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="tXi-YH-DVk">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -201,11 +209,61 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCz-ek-6se" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="769" y="-68"/>
+            <point key="canvasLocation" x="1280" y="14"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8ul-HB-VeW">
+            <objects>
+                <tabBarController id="cyF-o5-hm0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="RPX-0z-JlJ"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="raP-66-jZA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sWE-E7-NCZ" kind="relationship" relationship="viewControllers" id="0Cg-Gl-1uO"/>
+                        <segue destination="z5M-er-onV" kind="relationship" relationship="viewControllers" id="eJd-Dd-xpE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvH-8z-tFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="14"/>
+        </scene>
+        <!--Table View Controller - Dashboard-->
+        <scene sceneID="Pm1-Ub-qIL">
+            <objects>
+                <tableViewController title="Dashboard" id="z5M-er-onV" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3iZ-G6-PC8" customClass="TableViewPadded">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CLI-Y0-yxC">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z5M-er-onV" id="56F-Tw-dg0"/>
+                            <outlet property="delegate" destination="z5M-er-onV" id="px5-6b-1C9"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="x9c-ut-mZM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSG-rQ-wwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="-263"/>
         </scene>
     </scenes>
     <resources>
-        <image name="checkbox_unchecked.png" width="16" height="16"/>
+        <image name="checkbox_unchecked.png" width="18" height="18"/>
         <image name="home_bg_top.png" width="320" height="4"/>
         <image name="login_button.png" width="259" height="41"/>
         <image name="logo.png" width="220" height="100"/>
@@ -233,8 +291,17 @@
         <class className="ProjectDetailsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectDetailsViewController.h"/>
         </class>
+        <class className="ProjectListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="ProjectListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectListViewController.h"/>
+        </class>
+        <class className="TableViewPadded" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewPadded.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
