@@ -15,6 +15,7 @@
     // Override point for customization after application launch.
     [NUIAppearance init];
     [NUISettings initWithStylesheet:@"JiraApp"];
+    self.window.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 							

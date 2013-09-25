@@ -33,6 +33,7 @@
 		A349E9D617F026E20045BBD7 /* JiraProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9D517F026E20045BBD7 /* JiraProjectDetailsViewController.m */; };
 		A349E9D917F027E00045BBD7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9D817F027E00045BBD7 /* User.m */; };
 		A349E9DC17F028770045BBD7 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9DB17F028770045BBD7 /* Issue.m */; };
+		A38E2F6017F312F80071A041 /* projects_list.png in Resources */ = {isa = PBXBuildFile; fileRef = A38E2F5F17F312F80071A041 /* projects_list.png */; };
 		A399B3B417F0361F0075D5DC /* JiraApp.nss in Resources */ = {isa = PBXBuildFile; fileRef = A399B3B317F0361F0075D5DC /* JiraApp.nss */; };
 		A399B3B817F038E30075D5DC /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A399B3B717F038E30075D5DC /* LoginTextField.m */; };
 		A399B3C217F03E8F0075D5DC /* dosis-v1.7.zip in Resources */ = {isa = PBXBuildFile; fileRef = A399B3BA17F03E8F0075D5DC /* dosis-v1.7.zip */; };
@@ -42,7 +43,6 @@
 		A399B3C617F03E8F0075D5DC /* home_page_preview.png in Resources */ = {isa = PBXBuildFile; fileRef = A399B3BE17F03E8F0075D5DC /* home_page_preview.png */; };
 		A399B3C717F03E8F0075D5DC /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A399B3BF17F03E8F0075D5DC /* login_button.png */; };
 		A399B3C817F03E8F0075D5DC /* login_button_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = A399B3C017F03E8F0075D5DC /* login_button_blank.png */; };
-		A399B3C917F03E8F0075D5DC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A399B3C117F03E8F0075D5DC /* logo.png */; };
 		A3D5F5B517F2DBCD00C3D5CC /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D5F5B417F2DBCD00C3D5CC /* arrow_right.png */; };
 		E69A54B0B9114032B76D357F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F38FB1931A417DA38FF7BF /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -92,6 +92,7 @@
 		A349E9D817F027E00045BBD7 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A349E9DA17F028770045BBD7 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		A349E9DB17F028770045BBD7 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
+		A38E2F5F17F312F80071A041 /* projects_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projects_list.png; sourceTree = "<group>"; };
 		A399B3B317F0361F0075D5DC /* JiraApp.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JiraApp.nss; sourceTree = "<group>"; };
 		A399B3B617F038E30075D5DC /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
 		A399B3B717F038E30075D5DC /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		A399B3BE17F03E8F0075D5DC /* home_page_preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_page_preview.png; sourceTree = "<group>"; };
 		A399B3BF17F03E8F0075D5DC /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
 		A399B3C017F03E8F0075D5DC /* login_button_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_blank.png; sourceTree = "<group>"; };
-		A399B3C117F03E8F0075D5DC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		A3D5F5B417F2DBCD00C3D5CC /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		FF603542A1ED44B18F668F8B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -245,7 +245,7 @@
 				A399B3BF17F03E8F0075D5DC /* login_button.png */,
 				A3D5F5B417F2DBCD00C3D5CC /* arrow_right.png */,
 				A399B3C017F03E8F0075D5DC /* login_button_blank.png */,
-				A399B3C117F03E8F0075D5DC /* logo.png */,
+				A38E2F5F17F312F80071A041 /* projects_list.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -317,10 +317,10 @@
 				A399B3C617F03E8F0075D5DC /* home_page_preview.png in Resources */,
 				A399B3C717F03E8F0075D5DC /* login_button.png in Resources */,
 				A399B3C817F03E8F0075D5DC /* login_button_blank.png in Resources */,
-				A399B3C917F03E8F0075D5DC /* logo.png in Resources */,
 				A3D5F5B517F2DBCD00C3D5CC /* arrow_right.png in Resources */,
 				3C18CD2B17F30B2F0003E54C /* checkbox_checked.png in Resources */,
 				3C18CD2C17F30B2F0003E54C /* checkbox_unchecked.png in Resources */,
+				A38E2F6017F312F80071A041 /* projects_list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
