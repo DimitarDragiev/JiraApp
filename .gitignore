@@ -1,0 +1,17 @@
+UserInterfaceState.xcuserstate
+build
+*.pbxuser
+*.perspectivev3
+*.mode1v3
+*~.nib
+*~.xib 
+.DS_Store
+Pods/*
+Podfile.lock
+*.xcworkspace
+xcuserdata
+*~.xcworkspace
+*.xcodeproj/
+!*.xcodeproj/project.pbxproj
+*.log
+xcuserdata
