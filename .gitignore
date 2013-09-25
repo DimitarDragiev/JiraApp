@@ -5,7 +5,9 @@ build
 *.mode1v3
 *~.nib
 *~.xib 
-.DS_Store 
+.DS_Store
+.DS_Store?
+._*
 Pods/*
 Podfile.lock
 *.xcworkspace
