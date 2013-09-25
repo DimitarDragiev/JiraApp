@@ -11,4 +11,7 @@ Podfile.lock
 *.xcworkspace
 xcuserdata
 *~.xcworkspace
-*~.xcodeproj
+*.xcodeproj/
+!*.xcodeproj/project.pbxproj
+*.log
+xcuserdata
