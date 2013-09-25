@@ -13,7 +13,9 @@
 #import <AFNetworking/AFNetworking.h>
 #import <Security/Security.h>
 
-@interface  LoginViewController()
+@interface  LoginViewController(){
+    BOOL checked;
+}
 
 @end
 
@@ -21,9 +23,18 @@
 @synthesize userName;
 @synthesize password;
 @synthesize keychain;
+@synthesize rememberMeButton;
 
 - (void)viewDidLoad
 {
+    
+    checked = NO;
+    CGRect rect = self.view.frame;
+    for (UIView *v in self.view.subviews) {
+        rect = CGRectUnion(rect, v.frame);
+    }
+    [[self scrollView] setContentSize:rect.size];
+    rememberMeButton.imageEdgeInsets = UIEdgeInsetsMake(0,0, 0, 0);
     self.userName.delegate = self;
     self.password.delegate = self;
 //    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
@@ -34,6 +45,11 @@
      keychain =[[KeychainItemWrapper alloc] initWithIdentifier:@"JiraAppLoginData" accessGroup:nil];
     [userName setText:[keychain objectForKey:(__bridge id)(kSecAttrAccount)]];
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+   
 	// Do any additional setup after loading the view, typically from a nib.
 }
 -(UIScrollView*)scrollView{
@@ -59,12 +75,16 @@
 }
 
 -(IBAction)rememberMeTapped:(UIButton*)sender{
-   // [sender setImage:<#(UIImage *)#> forState:<#(UIControlState)#>]
-    sender.selected = !sender.selected;
-    [keychain setObject:userName.text forKey:(__bridge id)kSecAttrAccount];
-    if(sender.selected){
-//        sender.highlighted = YES;
-//        [keychain setObject:userName.text forKey:(__bridge id)kSecAttrAccount];
+    if(!checked){
+        [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateNormal];
+        checked = YES;
+        [keychain setObject:userName.text forKey:(__bridge id)kSecAttrAccount];
+    }
+    else if(checked){
+        [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
+        checked = NO;
+        [keychain resetKeychainItem];
+        
     }
 }
 

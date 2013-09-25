@@ -123,7 +123,11 @@ TextField {
     border-style: none;
     border-color: @primaryBorderColor;
     border-width: 1;
+<<<<<<< HEAD
     corner-radius: 10;
+=======
+    corner-radius: 5;
+>>>>>>> db5e1f4cf7f080f2430006defc4c33863b69973b
     padding: 5;
     vertical-align: center;
 }

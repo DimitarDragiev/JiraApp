@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet LoginTextField *password;
 @property  KeychainItemWrapper *keychain;
 
+@property (weak, nonatomic) IBOutlet UIButton *rememberMeButton;
 - (IBAction)rememberMeTapped:(id)sender;
 
 @end

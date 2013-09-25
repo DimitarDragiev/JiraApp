@@ -8,6 +8,7 @@
 
 #import "Project.h"
 #import "Issue.h"
+
 @implementation Project
 
 -(id)initWithJSON:(NSDictionary*) data{
@@ -18,6 +19,7 @@
         self.name = [data objectForKey:@"name"];
         self.url = [data objectForKey:@"self"];
     }
+    
     if([data objectForKey:@"lead"]){
         self.lead = [[User alloc] initWithJSON:[data objectForKey:@"lead"]];
     }
