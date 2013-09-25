@@ -1,12 +1,16 @@
-UserInterfaceState.xcuserstate
-build
+#xcode Noise
+build/*
 *.pbxuser
-*.perspectivev3
+*.mode2v3
 *.mode1v3
+*.xcworkspace
+xcuserdata
+
+# OSX Noise
+.DS_Store
+profile
 *~
-*~.nib
-*~.xib 
-.DS_Store 
-xcuserdata/
-Pods/*
-Podfile.lock
+*.lock
+*.DS_Store
+*.swp
+*.out
