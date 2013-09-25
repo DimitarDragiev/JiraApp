@@ -37,9 +37,6 @@
         issueName.text = [[[data issues] objectAtIndex:0] objectForKey:@"name"];
         issueDescription.text = [[[data issues] objectAtIndex:0] objectForKey:@"description"];
         for(id issue in [data issues]){
-            UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(60, 250, 100, 50)];
-            [self.view addSubview:label];
-            label.text = @"TTTTT";
             NSLog(@"%@ %@", [issue objectForKey:@"name"], [issue objectForKey:@"description"]);
         }
     } andFailureBlock:^(NSError *error) {

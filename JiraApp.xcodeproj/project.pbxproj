@@ -39,6 +39,7 @@
 		A399B3C717F03E8F0075D5DC /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A399B3BF17F03E8F0075D5DC /* login_button.png */; };
 		A399B3C817F03E8F0075D5DC /* login_button_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = A399B3C017F03E8F0075D5DC /* login_button_blank.png */; };
 		A399B3C917F03E8F0075D5DC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A399B3C117F03E8F0075D5DC /* logo.png */; };
+		A3D5F5B517F2DBCD00C3D5CC /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D5F5B417F2DBCD00C3D5CC /* arrow_right.png */; };
 		E69A54B0B9114032B76D357F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F38FB1931A417DA38FF7BF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		A399B3BF17F03E8F0075D5DC /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
 		A399B3C017F03E8F0075D5DC /* login_button_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_blank.png; sourceTree = "<group>"; };
 		A399B3C117F03E8F0075D5DC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		A3D5F5B417F2DBCD00C3D5CC /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		FF603542A1ED44B18F668F8B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -225,6 +227,7 @@
 				A399B3BD17F03E8F0075D5DC /* home_icon_user.png */,
 				A399B3BE17F03E8F0075D5DC /* home_page_preview.png */,
 				A399B3BF17F03E8F0075D5DC /* login_button.png */,
+				A3D5F5B417F2DBCD00C3D5CC /* arrow_right.png */,
 				A399B3C017F03E8F0075D5DC /* login_button_blank.png */,
 				A399B3C117F03E8F0075D5DC /* logo.png */,
 			);
@@ -299,6 +302,7 @@
 				A399B3C717F03E8F0075D5DC /* login_button.png in Resources */,
 				A399B3C817F03E8F0075D5DC /* login_button_blank.png in Resources */,
 				A399B3C917F03E8F0075D5DC /* logo.png in Resources */,
+				A3D5F5B517F2DBCD00C3D5CC /* arrow_right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

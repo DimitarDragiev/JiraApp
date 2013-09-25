@@ -64,8 +64,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Project *project = [[self projectList] objectAtIndex:indexPath.row];
     cell.textLabel.text = [project name];
-    // Configure the cell...
+    cell.accessoryView = [[ UIImageView alloc ]
+                          initWithImage:[UIImage imageNamed:@"arrow_right" ]];
     
+    
+    // Configure the cell...
+
     return cell;
 }
 
