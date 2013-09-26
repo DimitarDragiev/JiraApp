@@ -33,6 +33,8 @@
     for (UIView *v in self.view.subviews) {
         rect = CGRectUnion(rect, v.frame);
     }
+    [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateSelected];
+    [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
     [[self scrollView] setContentSize:rect.size];
     rememberMeButton.imageEdgeInsets = UIEdgeInsetsMake(0,0, 0, 0);
     self.userName.delegate = self;
@@ -42,9 +44,11 @@
 //    userName.leftViewMode = UITextFieldViewModeAlways;
     [self.userName setIcon:[UIImage imageNamed:@"home_icon_user"]];
     [self.password setIcon:[UIImage imageNamed:@"home_icon_pass"]];
+    
      keychain =[[KeychainItemWrapper alloc] initWithIdentifier:@"JiraAppLoginData" accessGroup:nil];
     id keychainItem = [keychain objectForKey:(__bridge id)(kSecAttrAccount)];
     keychainItem = keychainItem && [keychainItem isKindOfClass:NSString.class] ? keychainItem : @"";
+    rememberMeButton.selected = [keychainItem isEqualToString:@""] ? NO : YES;
     [userName setText:keychainItem];
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -77,17 +81,8 @@
 }
 
 -(IBAction)rememberMeTapped:(UIButton*)sender{
-    if(!checked){
-        [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_checked"] forState:UIControlStateNormal];
-        checked = YES;
-        
-    }
-    else if(checked){
-        [rememberMeButton setImage:[UIImage imageNamed:@"checkbox_unchecked"] forState:UIControlStateNormal];
-        checked = NO;
-    }
+    sender.selected = !sender.selected;
 }
-
 - (IBAction)loginTapped:(id)sender {
     
 
@@ -111,11 +106,13 @@
 //       [navController.view.window makeKeyAndVisible];
        [self presentViewController:navController animated:YES completion:nil];
    } andFailureBlock:^(NSError *error) {
-       [[[UIAlertView alloc] initWithTitle:@""
-                                   message:[error localizedDescription]
-                                  delegate:nil
-                         cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                         otherButtonTitles: nil] show];
+       
+       
+//       [[[UIAlertView alloc] initWithTitle:@""
+//                                   message:[error localizedDescription]
+//                                  delegate:nil
+//                         cancelButtonTitle:NSLocalizedString(@"OK", nil)
+//                         otherButtonTitles: nil] show];
    }];
 //    NSString *username = userName.text;
 //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
