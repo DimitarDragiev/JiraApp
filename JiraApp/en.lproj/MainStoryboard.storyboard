@@ -160,7 +160,7 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJc-zY-c30">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.5058823823928833" green="0.56078433990478516" blue="0.62745100259780884" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
@@ -257,7 +257,7 @@
                             <outlet property="delegate" destination="z5M-er-onV" id="px5-6b-1C9"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="x9c-ut-mZM"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" id="x9c-ut-mZM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSG-rQ-wwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,7 +268,7 @@
         <image name="checkbox_unchecked.png" width="18" height="18"/>
         <image name="home_bg_top.png" width="320" height="4"/>
         <image name="login_button.png" width="259" height="41"/>
-        <image name="logo.png" width="220" height="100"/>
+        <image name="logo.png" width="16" height="16"/>
     </resources>
     <classes>
         <class className="LoginTextField" superclassName="UITextField">

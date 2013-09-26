@@ -95,14 +95,16 @@ SegmentedControl {
 Switch {
     on-tint-color: @primaryBackgroundColor;
 }
-TabBar {
-    background-color: #000000;
+
+TabBar{
+    background-color: #393C3F;
 }
+
 TabBarItem {
     font-name: @primaryFontName;
-    font-color: @secondaryFontColor;
     font-size: 18;
     text-offset: 0,-11;
+    font-color: white;
 }
 Table{
     separator-color: #7F848C;
@@ -146,3 +148,5 @@ LoginTextField{
     padding:5 5 5 50;
     height: 60;
 }
+
+
