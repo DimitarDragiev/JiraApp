@@ -98,6 +98,7 @@ Switch {
 
 TabBar{
     background-color: #393C3F;
+    selected-image: 
 }
 
 TabBarItem {
