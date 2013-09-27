@@ -35,7 +35,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [[JiraRestClientAPI sharedClient] getDashboardWithSuccessBlock:^(id data) {
-          NSLog(@"DASHBOARD DATA: %@", [data objectForKey:@"issues"]);
+          NSLog(@"DASHBOARD DATA: %@", [[[[[data objectForKey:@"issues"]objectAtIndex:0] objectForKey:@"fields"] objectForKey:@"priority"] objectForKey:@"name"]);
+        NSLog(@"DASHBOARD DATA: %@", [[[[[data objectForKey:@"issues"]objectAtIndex:0] objectForKey:@"fields"] objectForKey:@"status"] objectForKey:@"name"]);
+        NSLog(@"DASHBOARD DATA: %@", [[[[[data objectForKey:@"issues"]objectAtIndex:0] objectForKey:@"fields"]objectForKey:@"issuetype"] objectForKey:@"name"]);
 //        self.projectOwner = [data lead].name;
 //        self.projectDescription = [data description];
 //        [self.issues removeAllObjects];

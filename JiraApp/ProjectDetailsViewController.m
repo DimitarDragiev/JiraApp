@@ -33,7 +33,7 @@
 	// Do any additional setup after loading the view.
     self.issues = [NSMutableArray new];
     [[JiraRestClientAPI sharedClient] getProjectDetailsWithKey: self.projectKey andSuccessBlock:^(Project *data) {
-        //NSLog(@"Response%@", data.issues);
+        NSLog(@"RESPONSE%@", [data.issues objectAtIndex:0]);
         /*self.projectOwner = [data lead].name;
         self.projectDescription = [data description];
         */

@@ -32,7 +32,9 @@
     
     [[JiraRestClientAPI sharedClient] getIssueDetailsWithKey: [[NSString alloc] initWithFormat: @"%@", self.issueID] andSuccessBlock:^(id data) {
         NSLog(@"Issue data: %@", [[data objectForKey:@"fields"] objectForKey:@"status"]);
-        self.issueCommentLabel.text = [[[data objectForKey:@"fields"] objectForKey:@"status"] objectForKey:@"name"];
+        self.issueDescriptionLabel.text = [[[data objectForKey:@"fields"] objectForKey:@"status"] objectForKey:@"name"];
+        self.issueIDLabel.text = [[[data objectForKey:@"fields"] objectForKey:@"issuetype"] objectForKey:@"name"];
+        self.issueCommentLabel.text = [[[data objectForKey:@"fields"] objectForKey:@"priority"] objectForKey:@"name"];
     } andFailureBlock:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:@""
                                     message:[error localizedDescription]
