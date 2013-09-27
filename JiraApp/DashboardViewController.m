@@ -1,22 +1,19 @@
 //
-//  ProjectDetailsViewController.m
+//  DashboardViewController.m
 //  JiraApp
 //
-//  Created by Slavena  on 9/24/13.
+//  Created by Slavena  on 9/26/13.
 //  Copyright (c) 2013 Dimitar Dragiev. All rights reserved.
 //
 
-#import "ProjectDetailsViewController.h"
+#import "DashboardViewController.h"
 #import "JiraRestClientAPI.h"
-#import "IssueDetailsViewController.h"
-#import "Project.h"
-#import "Issue.h"
 
-@interface ProjectDetailsViewController ()
+@interface DashboardViewController ()
 
 @end
 
-@implementation ProjectDetailsViewController
+@implementation DashboardViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,19 +27,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.issues = [NSMutableArray new];
-    [[JiraRestClientAPI sharedClient] getProjectDetailsWithKey: self.projectKey andSuccessBlock:^(Project *data) {
-        //NSLog(@"Response%@", data.issues);
-        /*self.projectOwner = [data lead].name;
-        self.projectDescription = [data description];
-        */
-        [self.issues removeAllObjects];
-        for(Issue *issue in [data issues]){
-            //Issue *newIssue = [[Issue alloc] initWithJSON:issue];
-            [self.issues addObject: issue];
-        }
-        [self.tableView reloadData];
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [[JiraRestClientAPI sharedClient] getDashboardWithSuccessBlock:^(id data) {
+          NSLog(@"DASHBOARD DATA: %@", [data objectForKey:@"issues"]);
+//        self.projectOwner = [data lead].name;
+//        self.projectDescription = [data description];
+//        [self.issues removeAllObjects];
+//        for(id issue in [data issues]){
+//            Issue *newIssue = [[Issue alloc] initWithJSON:issue];
+//            [self.issues addObject: newIssue];
+//        }
+//        [self.tableView reloadData];
     } andFailureBlock:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:@""
                                     message:[error localizedDescription]
@@ -50,7 +51,6 @@
                           cancelButtonTitle:NSLocalizedString(@"OK", nil)
                           otherButtonTitles: nil] show];
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,15 +65,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"Number of rows: %@", self.issues);
-    return [self.issues count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,22 +81,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    Issue *issue = [[self issues] objectAtIndex:indexPath.row];
-    //cell.textLabel.text = issue.issueSummary;
-    
-    cell.accessoryView = [[ UIImageView alloc ]
-                          initWithImage:[UIImage imageNamed:@"arrow_right" ]];
-
-    
-    UILabel *projectKeyLabel = (UILabel *)[cell viewWithTag:2];
-    projectKeyLabel.text = self.projectKey;
-    
-    UILabel *issueDetailsLabel = (UILabel *)[cell viewWithTag:3];
-    issueDetailsLabel.text = issue.issueSummary;
-    
-    
-    UILabel *issueAssigneeLabel = (UILabel *)[cell viewWithTag:4];
-    issueAssigneeLabel.text = issue.assigneeName;
     
     return cell;
 }
@@ -152,18 +135,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    Issue *issue = [self.issues objectAtIndex:indexPath.row];
-    if ([segue.identifier isEqualToString:@"showIssueDetail"]) {
-        IssueDetailsViewController *destViewController = segue.destinationViewController;
-        NSLog(@"%@", issue.issueID);
-        destViewController.issueID = issue.issueID;
-        
-    }
-    
 }
 
 @end

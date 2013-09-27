@@ -62,13 +62,66 @@ static NSString *const JiraAppRequestCentreURLString = @"https://jira01.isdc.eu/
                                    otherButtonTitles:nil] show];
     }
 }
+
+//-(void)getProjectDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail{
+//    NSString *path = @"project/";
+//    NSString *path2 = [path stringByAppendingString: key];
+//    [[self.class sharedClient] getPath:path2 parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+//        if(success){
+//            Project *project = [[Project alloc] initWithJSON:responseObject];
+//            success(project);
+//            /*NSLog(@"%@", [responseObject objectForKey:@"description"]);
+//             NSLog(@"%@", [[responseObject objectForKey:@"lead"] objectForKey:@"displayName"]);
+//             for(id issue in [responseObject objectForKey:@"issueTypes"])
+//             NSLog(@"%@ - %@", [issue objectForKey: @"name"], [issue objectForKey:@"description"]);*/
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        fail(error);
+//    }];
+//}
+
+
 -(void)getProjectDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail{
-    NSString *path = @"project/";
+    NSString *path = [[NSString alloc] initWithFormat:@"search?jql=project=%@+order+by+duedate&fields=id,key,assignee,summary",key]; 
+    //NSLog(@"%@", path);
+    [[self.class sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+        if(success){
+            NSLog(@"%@", responseObject);
+            Project *project = [[Project alloc] initWithJSON:responseObject];
+            success(project);
+            /*NSLog(@"%@", [responseObject objectForKey:@"description"]);
+             NSLog(@"%@", [[responseObject objectForKey:@"lead"] objectForKey:@"displayName"]);
+             for(id issue in [responseObject objectForKey:@"issueTypes"])
+             NSLog(@"%@ - %@", [issue objectForKey: @"name"], [issue objectForKey:@"description"]);*/
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        fail(error);
+    }];
+}
+
+-(void)getIssueDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id data)) success andFailureBlock:(void (^)(NSError *error)) fail{
+    NSString *path = @"issue/";
     NSString *path2 = [path stringByAppendingString: key];
     [[self.class sharedClient] getPath:path2 parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
         if(success){
-            Project *project = [[Project alloc] initWithJSON:responseObject];
-            success(project);
+            //Project *project = [[Project alloc] initWithJSON:responseObject];
+            success(responseObject);
+            /*NSLog(@"%@", [responseObject objectForKey:@"description"]);
+             NSLog(@"%@", [[responseObject objectForKey:@"lead"] objectForKey:@"displayName"]);
+             for(id issue in [responseObject objectForKey:@"issueTypes"])
+             NSLog(@"%@ - %@", [issue objectForKey: @"name"], [issue objectForKey:@"description"]);*/
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        fail(error);
+    }];
+}
+
+-(void)getDashboardWithSuccessBlock: (void(^)(id data)) success andFailureBlock:(void (^)(NSError *error)) fail{
+    NSString *path = @"search?jql=project=SO";
+    [[self.class sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+        if(success){
+            //Project *data = [[Project alloc] initWithJSON:responseObject];
+            success(responseObject);
             /*NSLog(@"%@", [responseObject objectForKey:@"description"]);
              NSLog(@"%@", [[responseObject objectForKey:@"lead"] objectForKey:@"displayName"]);
              for(id issue in [responseObject objectForKey:@"issueTypes"])

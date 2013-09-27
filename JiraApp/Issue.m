@@ -16,6 +16,8 @@
         self.issueID = [data objectForKey:@"id"];
         self.issueName = [data objectForKey:@"name"];
         self.issueDescription = [data objectForKey:@"description"];
+        self.issueSummary = [data objectForKey:@"summary"];
+        self.assigneeName = [[data objectForKey:@"assignee"] objectForKey:@"displayName"];
     }
     return self;
 }

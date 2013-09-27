@@ -31,11 +31,29 @@
 		3CA6A00817EC5C0B002F9917 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6A00617EC5C0B002F9917 /* KeychainItemWrapper.m */; };
 		3CEAC56817F3118400333B57 /* projects_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC56717F3118400333B57 /* projects_list.png */; };
 		3CEAC56B17F31CD500333B57 /* JiraHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAC56A17F31CD500333B57 /* JiraHTTPRequestOperation.m */; };
+		A31A8E2817F42DAC00BD4098 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A8E2717F42DAC00BD4098 /* DashboardViewController.m */; };
+		A31A8E6B17F4618800BD4098 /* IssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A8E6A17F4618800BD4098 /* IssueDetailsViewController.m */; };
+		A330311717F421F000C24D8D /* arrow_menu_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A330311617F421F000C24D8D /* arrow_menu_white.png */; };
 		A3414B3817F18C9000D09F35 /* ProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3414B3717F18C9000D09F35 /* ProjectDetailsViewController.m */; };
 		A349E9D617F026E20045BBD7 /* JiraProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9D517F026E20045BBD7 /* JiraProjectDetailsViewController.m */; };
 		A349E9D917F027E00045BBD7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9D817F027E00045BBD7 /* User.m */; };
 		A349E9DC17F028770045BBD7 /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = A349E9DB17F028770045BBD7 /* Issue.m */; };
-		A38E2F6017F312F80071A041 /* projects_list.png in Resources */ = {isa = PBXBuildFile; fileRef = A38E2F5F17F312F80071A041 /* projects_list.png */; };
+		A397E47217F5A78600C6E57A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47117F5A78600C6E57A /* logo.png */; };
+		A397E48117F5ADA700C6E57A /* issue_type_bug@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47317F5ADA400C6E57A /* issue_type_bug@2x.png */; };
+		A397E48217F5ADA700C6E57A /* priority_major.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47417F5ADA500C6E57A /* priority_major.png */; };
+		A397E48317F5ADA700C6E57A /* priority_major@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47517F5ADA500C6E57A /* priority_major@2x.png */; };
+		A397E48417F5ADA700C6E57A /* search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47617F5ADA500C6E57A /* search_icon.png */; };
+		A397E48517F5ADA700C6E57A /* search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47717F5ADA500C6E57A /* search_icon@2x.png */; };
+		A397E48617F5ADA700C6E57A /* status_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47817F5ADA500C6E57A /* status_closed.png */; };
+		A397E48717F5ADA700C6E57A /* status_closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47917F5ADA600C6E57A /* status_closed@2x.png */; };
+		A397E48817F5ADA700C6E57A /* status_inprogress.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47A17F5ADA600C6E57A /* status_inprogress.png */; };
+		A397E48917F5ADA700C6E57A /* status_inprogress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47B17F5ADA600C6E57A /* status_inprogress@2x.png */; };
+		A397E48A17F5ADA700C6E57A /* status_reopened.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47C17F5ADA600C6E57A /* status_reopened.png */; };
+		A397E48B17F5ADA700C6E57A /* status_reopened@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47D17F5ADA600C6E57A /* status_reopened@2x.png */; };
+		A397E48C17F5ADA700C6E57A /* status_resolved.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47E17F5ADA700C6E57A /* status_resolved.png */; };
+		A397E48D17F5ADA700C6E57A /* status_resolved@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E47F17F5ADA700C6E57A /* status_resolved@2x.png */; };
+		A397E48E17F5ADA700C6E57A /* thick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E48017F5ADA700C6E57A /* thick@2x.png */; };
+		A397E49017F5B03A00C6E57A /* issues_list.png in Resources */ = {isa = PBXBuildFile; fileRef = A397E48F17F5B03900C6E57A /* issues_list.png */; };
 		A399B3B417F0361F0075D5DC /* JiraApp.nss in Resources */ = {isa = PBXBuildFile; fileRef = A399B3B317F0361F0075D5DC /* JiraApp.nss */; };
 		A399B3B817F038E30075D5DC /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A399B3B717F038E30075D5DC /* LoginTextField.m */; };
 		A399B3C217F03E8F0075D5DC /* dosis-v1.7.zip in Resources */ = {isa = PBXBuildFile; fileRef = A399B3BA17F03E8F0075D5DC /* dosis-v1.7.zip */; };
@@ -89,6 +107,11 @@
 		3CEAC56917F31CD500333B57 /* JiraHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiraHTTPRequestOperation.h; sourceTree = "<group>"; };
 		3CEAC56A17F31CD500333B57 /* JiraHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiraHTTPRequestOperation.m; sourceTree = "<group>"; };
 		52F38FB1931A417DA38FF7BF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31A8E2617F42DAC00BD4098 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		A31A8E2717F42DAC00BD4098 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		A31A8E6917F4618700BD4098 /* IssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailsViewController.h; sourceTree = "<group>"; };
+		A31A8E6A17F4618800BD4098 /* IssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueDetailsViewController.m; sourceTree = "<group>"; };
+		A330311617F421F000C24D8D /* arrow_menu_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_menu_white.png; sourceTree = "<group>"; };
 		A3414B3617F18C9000D09F35 /* ProjectDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailsViewController.h; sourceTree = "<group>"; };
 		A3414B3717F18C9000D09F35 /* ProjectDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsViewController.m; sourceTree = "<group>"; };
 		A349E9D417F026E20045BBD7 /* JiraProjectDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiraProjectDetailsViewController.h; sourceTree = "<group>"; };
@@ -98,6 +121,22 @@
 		A349E9DA17F028770045BBD7 /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		A349E9DB17F028770045BBD7 /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		A38E2F5F17F312F80071A041 /* projects_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projects_list.png; sourceTree = "<group>"; };
+		A397E47117F5A78600C6E57A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		A397E47317F5ADA400C6E57A /* issue_type_bug@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issue_type_bug@2x.png"; sourceTree = "<group>"; };
+		A397E47417F5ADA500C6E57A /* priority_major.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priority_major.png; sourceTree = "<group>"; };
+		A397E47517F5ADA500C6E57A /* priority_major@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "priority_major@2x.png"; sourceTree = "<group>"; };
+		A397E47617F5ADA500C6E57A /* search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_icon.png; sourceTree = "<group>"; };
+		A397E47717F5ADA500C6E57A /* search_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon@2x.png"; sourceTree = "<group>"; };
+		A397E47817F5ADA500C6E57A /* status_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_closed.png; sourceTree = "<group>"; };
+		A397E47917F5ADA600C6E57A /* status_closed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_closed@2x.png"; sourceTree = "<group>"; };
+		A397E47A17F5ADA600C6E57A /* status_inprogress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_inprogress.png; sourceTree = "<group>"; };
+		A397E47B17F5ADA600C6E57A /* status_inprogress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_inprogress@2x.png"; sourceTree = "<group>"; };
+		A397E47C17F5ADA600C6E57A /* status_reopened.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_reopened.png; sourceTree = "<group>"; };
+		A397E47D17F5ADA600C6E57A /* status_reopened@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_reopened@2x.png"; sourceTree = "<group>"; };
+		A397E47E17F5ADA700C6E57A /* status_resolved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_resolved.png; sourceTree = "<group>"; };
+		A397E47F17F5ADA700C6E57A /* status_resolved@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_resolved@2x.png"; sourceTree = "<group>"; };
+		A397E48017F5ADA700C6E57A /* thick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thick@2x.png"; sourceTree = "<group>"; };
+		A397E48F17F5B03900C6E57A /* issues_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = issues_list.png; sourceTree = "<group>"; };
 		A399B3B317F0361F0075D5DC /* JiraApp.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JiraApp.nss; sourceTree = "<group>"; };
 		A399B3B617F038E30075D5DC /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
 		A399B3B717F038E30075D5DC /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
@@ -132,11 +171,11 @@
 			isa = PBXGroup;
 			children = (
 				3C2B114C17EB3D63000FBCFF /* Project.h */,
+				3C2B114D17EB3D63000FBCFF /* Project.m */,
 				A349E9DA17F028770045BBD7 /* Issue.h */,
 				A349E9DB17F028770045BBD7 /* Issue.m */,
 				A349E9D717F027E00045BBD7 /* User.h */,
 				A349E9D817F027E00045BBD7 /* User.m */,
-				3C2B114D17EB3D63000FBCFF /* Project.m */,
 				3C2B114F17EB461B000FBCFF /* ProjectManager.h */,
 				3C2B115017EB461B000FBCFF /* ProjectManager.m */,
 				3CEAC56917F31CD500333B57 /* JiraHTTPRequestOperation.h */,
@@ -148,6 +187,10 @@
 		3C2B115217EB4912000FBCFF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A31A8E6917F4618700BD4098 /* IssueDetailsViewController.h */,
+				A31A8E6A17F4618800BD4098 /* IssueDetailsViewController.m */,
+				A31A8E2617F42DAC00BD4098 /* DashboardViewController.h */,
+				A31A8E2717F42DAC00BD4098 /* DashboardViewController.m */,
 				3C336E4517EAF7020038166D /* LoginViewController.h */,
 				3C336E4617EAF7020038166D /* LoginViewController.m */,
 				A349E9D417F026E20045BBD7 /* JiraProjectDetailsViewController.h */,
@@ -243,15 +286,32 @@
 			isa = PBXGroup;
 			children = (
 				3CEAC56717F3118400333B57 /* projects_list.png */,
+				A397E47317F5ADA400C6E57A /* issue_type_bug@2x.png */,
+				A397E47417F5ADA500C6E57A /* priority_major.png */,
+				A397E48F17F5B03900C6E57A /* issues_list.png */,
+				A397E47517F5ADA500C6E57A /* priority_major@2x.png */,
+				A397E47617F5ADA500C6E57A /* search_icon.png */,
+				A397E47717F5ADA500C6E57A /* search_icon@2x.png */,
+				A397E47817F5ADA500C6E57A /* status_closed.png */,
+				A397E47917F5ADA600C6E57A /* status_closed@2x.png */,
+				A397E47A17F5ADA600C6E57A /* status_inprogress.png */,
+				A397E47B17F5ADA600C6E57A /* status_inprogress@2x.png */,
+				A397E47C17F5ADA600C6E57A /* status_reopened.png */,
+				A397E47D17F5ADA600C6E57A /* status_reopened@2x.png */,
+				A397E47E17F5ADA700C6E57A /* status_resolved.png */,
+				A397E47F17F5ADA700C6E57A /* status_resolved@2x.png */,
+				A397E48017F5ADA700C6E57A /* thick@2x.png */,
 				3C18CD2917F30B2F0003E54C /* checkbox_checked.png */,
 				3C18CD2A17F30B2F0003E54C /* checkbox_unchecked.png */,
 				A399B3BA17F03E8F0075D5DC /* dosis-v1.7.zip */,
 				A399B3BB17F03E8F0075D5DC /* home_bg_top.png */,
 				A399B3BC17F03E8F0075D5DC /* home_icon_pass.png */,
+				A330311617F421F000C24D8D /* arrow_menu_white.png */,
 				A399B3BD17F03E8F0075D5DC /* home_icon_user.png */,
 				A399B3BE17F03E8F0075D5DC /* home_page_preview.png */,
 				A399B3BF17F03E8F0075D5DC /* login_button.png */,
 				A3D5F5B417F2DBCD00C3D5CC /* arrow_right.png */,
+				A397E47117F5A78600C6E57A /* logo.png */,
 				A399B3C017F03E8F0075D5DC /* login_button_blank.png */,
 				A38E2F5F17F312F80071A041 /* projects_list.png */,
 			);
@@ -329,7 +389,23 @@
 				3C18CD2B17F30B2F0003E54C /* checkbox_checked.png in Resources */,
 				3C18CD2C17F30B2F0003E54C /* checkbox_unchecked.png in Resources */,
 				3CEAC56817F3118400333B57 /* projects_list.png in Resources */,
-
+				A330311717F421F000C24D8D /* arrow_menu_white.png in Resources */,
+				A397E47217F5A78600C6E57A /* logo.png in Resources */,
+				A397E48117F5ADA700C6E57A /* issue_type_bug@2x.png in Resources */,
+				A397E48217F5ADA700C6E57A /* priority_major.png in Resources */,
+				A397E48317F5ADA700C6E57A /* priority_major@2x.png in Resources */,
+				A397E48417F5ADA700C6E57A /* search_icon.png in Resources */,
+				A397E48517F5ADA700C6E57A /* search_icon@2x.png in Resources */,
+				A397E48617F5ADA700C6E57A /* status_closed.png in Resources */,
+				A397E48717F5ADA700C6E57A /* status_closed@2x.png in Resources */,
+				A397E48817F5ADA700C6E57A /* status_inprogress.png in Resources */,
+				A397E48917F5ADA700C6E57A /* status_inprogress@2x.png in Resources */,
+				A397E48A17F5ADA700C6E57A /* status_reopened.png in Resources */,
+				A397E48B17F5ADA700C6E57A /* status_reopened@2x.png in Resources */,
+				A397E48C17F5ADA700C6E57A /* status_resolved.png in Resources */,
+				A397E48D17F5ADA700C6E57A /* status_resolved@2x.png in Resources */,
+				A397E48E17F5ADA700C6E57A /* thick@2x.png in Resources */,
+				A397E49017F5B03A00C6E57A /* issues_list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +466,8 @@
 				3C18CD2517F301570003E54C /* TableViewPadded.m in Sources */,
 				3C18CD2817F305A10003E54C /* ProjectListCell.m in Sources */,
 				3CEAC56B17F31CD500333B57 /* JiraHTTPRequestOperation.m in Sources */,
+				A31A8E2817F42DAC00BD4098 /* DashboardViewController.m in Sources */,
+				A31A8E6B17F4618800BD4098 /* IssueDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

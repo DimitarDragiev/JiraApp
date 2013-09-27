@@ -98,7 +98,6 @@ Switch {
 
 TabBar{
     background-color: #393C3F;
-    selected-image: 
 }
 
 TabBarItem {
@@ -106,10 +105,14 @@ TabBarItem {
     font-size: 18;
     text-offset: 0,-11;
     font-color: white;
+    background-image-selected: arrow_menu_white.png;
+    background-image-selected-insets: 30 0 30 0;
 }
+
 Table{
     separator-color: #7F848C;
 }
+
 TableCell {
     background-color-top: @secondaryBackgroundColorTop;
     background-color-bottom: @secondaryBackgroundColorBottom;
@@ -117,11 +120,13 @@ TableCell {
     font-name: @primaryFontNameBold;
     font-size: 17;
 }
+
 TableCellDetail {
     font-name: @primaryFontName;
     font-size: 14;
     font-color: @secondaryFontColor;
 }
+
 TextField {
     font-color: @primaryFontColor;
     font-name: @primaryFontName;
