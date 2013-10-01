@@ -17,11 +17,17 @@
  "subtask": false
  },
  */
+
 @interface Issue : NSObject
 @property(nonatomic, strong) NSString *issueURL;
 @property(nonatomic, strong) NSNumber *issueID;
 @property(nonatomic, strong) NSString *issueDescription;
 @property(nonatomic, strong) NSString *issueName;
+@property(nonatomic, strong) NSString *assigneeName;
+@property(nonatomic, strong) NSString *issueSummary;
+@property(nonatomic, strong) NSString *issueStatus;
+@property(nonatomic, strong) NSString *issuePriority;
+@property(nonatomic, strong) NSString *issueTypeName;
 
 -(id)initWithJSON:(NSDictionary*) data;
 

@@ -8,6 +8,7 @@
 
 #import "ProjectDetailsViewController.h"
 #import "JiraRestClientAPI.h"
+#import "IssueDetailsViewController.h"
 #import "Project.h"
 #import "ProjectManager.h"
 #import "Issue.h"
@@ -69,13 +70,16 @@
 	// Do any additional setup after loading the view.
     self.issues = [NSMutableArray new];
     [[JiraRestClientAPI sharedClient] getProjectDetailsWithKey: self.projectKey andSuccessBlock:^(Project *data) {
-        //NSLog(@"%@", data);
-        self.projectOwner = [data lead].name;
+        NSLog(@"RESPONSE%@", [data.issues objectAtIndex:0]);
+        /*self.projectOwner = [data lead].name;
         self.projectDescription = [data description];
+        */
         [self.issues removeAllObjects];
-        for(id issue in [data issues]){
-            Issue *newIssue = [[Issue alloc] initWithJSON:issue];
-            [self.issues addObject: newIssue];
+        for(Issue *issue in [data issues]){
+            //Issue *newIssue = [[Issue alloc] initWithJSON:issue];
+            NSLog(@"Issue status: %@ and priority: %@ and typeName: %@", issue.issueStatus, issue.issuePriority, issue.issueTypeName);
+            [self.issues addObject: issue];
+            
         }
         [self.tableView reloadData];
     } andFailureBlock:^(NSError *error) {
@@ -114,7 +118,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"Number of rows: %@", self.issues);
+    //NSLog(@"Number of rows: %@", self.issues);
     return [self.issues count];
 }
 
@@ -125,7 +129,57 @@
     
     // Configure the cell...
     Issue *issue = [[self issues] objectAtIndex:indexPath.row];
-    cell.textLabel.text = issue.issueName;
+    //cell.textLabel.text = issue.issueSummary;
+    
+    cell.accessoryView = [[ UIImageView alloc ]
+                          initWithImage:[UIImage imageNamed:@"arrow_right" ]];
+
+    
+    UILabel *projectKeyLabel = (UILabel *)[cell viewWithTag:2];
+    projectKeyLabel.text = self.projectKey;
+    
+    UILabel *issueDetailsLabel = (UILabel *)[cell viewWithTag:3];
+    issueDetailsLabel.text = issue.issueSummary;
+    
+    
+    UILabel *issueAssigneeLabel = (UILabel *)[cell viewWithTag:4];
+    issueAssigneeLabel.text = issue.assigneeName;
+    
+    UIImageView *issuePriorityView = (UIImageView*)[cell viewWithTag:5];
+    if([issue.issuePriority isEqualToString:@"Major"]){
+        issuePriorityView.image = [UIImage imageNamed:@"priority_major.png"];
+    }
+    
+    UIImageView *issueTypeView = (UIImageView*)[cell viewWithTag:6];
+    if([issue.issueTypeName isEqualToString:@"Bug (Rework Dev)"]){
+        issueTypeView.image = [UIImage imageNamed:@"issue_type_bug@2x.png"];
+    }
+    else if([issue.issueTypeName isEqualToString:@"Task (Sub-Task)"]){
+        issueTypeView.image = [UIImage imageNamed:@""];
+    }
+    else if([issue.issueTypeName isEqualToString:@"Story (functional)"]){
+        issueTypeView.image = [UIImage imageNamed:@""];
+    }
+    else if([issue.issueTypeName isEqualToString:@"Task (Sub-Task)"]){
+        issueTypeView.image = [UIImage imageNamed:@""];
+    }
+    
+    UIImageView *issueStatusView = (UIImageView*)[cell viewWithTag:7];
+    if([issue.issueStatus isEqualToString:@"Closed"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_closed.png"];
+    }
+    else if([issue.issueStatus isEqualToString:@"Open"]){
+        issueStatusView.image = [UIImage imageNamed:@""];
+    }
+    else if([issue.issueStatus isEqualToString:@"Resolved"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_resolved.png"];
+    }
+    else if([issue.issueStatus isEqualToString:@"In Progress"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_inprogress.png"];
+    }
+    else if([issue.issueStatus isEqualToString:@"Reopened"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_reopened.png"];
+    }
     return cell;
 }
 
@@ -183,6 +237,18 @@
 -(BOOL)textfieldShouldReturn:(UITextField*)texfield{
     [texfield resignFirstResponder];
     return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Issue *issue = [self.issues objectAtIndex:indexPath.row];
+    if ([segue.identifier isEqualToString:@"showIssueDetail"]) {
+        IssueDetailsViewController *destViewController = segue.destinationViewController;
+        NSLog(@"%@", issue.issueID);
+        destViewController.issueID = issue.issueID;
+        
+    }
+    
 }
 
 @end

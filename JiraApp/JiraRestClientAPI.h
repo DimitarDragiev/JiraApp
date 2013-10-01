@@ -16,6 +16,8 @@
 + (JiraRestClientAPI *)sharedClient;
 -(void)getProjectsWithSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail;
 -(void)getProjectDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail;
+-(void)getIssueDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id data)) success andFailureBlock:(void (^)(NSError *error)) fail;
+-(void)getDashboardWithSuccessBlock: (void(^)(id data)) success andFailureBlock:(void (^)(NSError *error)) fail;
 -(void)setAuthCredentials:(NSString*)username password:(NSString*)password;
 -(void)showErrorForAccessDenied:(int)statuscode;
 
