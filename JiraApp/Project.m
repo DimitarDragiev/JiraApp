@@ -48,14 +48,17 @@
         if([data objectForKey:@"issues"]){
             self.issues = [NSMutableArray new];
             for(id issue in [data objectForKey:@"issues"]){
+                NSLog(@"Issue: %@", issue);
                 Issue *newIssue = [Issue new];
                 newIssue.issueID = [issue objectForKey:@"id"];
                 newIssue.issueSummary = [[issue objectForKey:@"fields"] objectForKey:@"summary"];
                 if([issue objectForKey:@"fields"] != [NSNull null] && [[issue objectForKey:@"fields"] objectForKey:@"assignee"] != [NSNull null] && [[[issue objectForKey:@"fields"] objectForKey:@"assignee"] objectForKey:@"displayName"] !=[NSNull null]){
                         newIssue.assigneeName =  [[[issue objectForKey:@"fields"] objectForKey:@"assignee"] objectForKey:@"displayName"];
                 }
+                newIssue.issueTypeName = [[[issue objectForKey:@"fields"] objectForKey:@"issuetype"] objectForKey:@"name"];
+                newIssue.issueStatus = [[[issue objectForKey:@"fields"] objectForKey:@"status"] objectForKey:@"name"];
+                newIssue.issuePriority = [[[issue objectForKey:@"fields"] objectForKey:@"priority"] objectForKey:@"name"];
                 [self.issues addObject:newIssue];
-                //NSLog(@"Issues array%@", newIssue);
             }
         }
     }

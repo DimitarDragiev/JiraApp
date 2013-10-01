@@ -27,6 +27,7 @@
 @property(nonatomic, strong) NSString *issueSummary;
 @property(nonatomic, strong) NSString *issueStatus;
 @property(nonatomic, strong) NSString *issuePriority;
+@property(nonatomic, strong) NSString *issueTypeName;
 
 -(id)initWithJSON:(NSDictionary*) data;
 

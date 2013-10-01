@@ -40,7 +40,9 @@
         [self.issues removeAllObjects];
         for(Issue *issue in [data issues]){
             //Issue *newIssue = [[Issue alloc] initWithJSON:issue];
+            NSLog(@"Issue status: %@ and priority: %@ and typeName: %@", issue.issueStatus, issue.issuePriority, issue.issueTypeName);
             [self.issues addObject: issue];
+            
         }
         [self.tableView reloadData];
     } andFailureBlock:^(NSError *error) {
@@ -72,7 +74,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"Number of rows: %@", self.issues);
+    //NSLog(@"Number of rows: %@", self.issues);
     return [self.issues count];
 }
 
@@ -99,6 +101,41 @@
     UILabel *issueAssigneeLabel = (UILabel *)[cell viewWithTag:4];
     issueAssigneeLabel.text = issue.assigneeName;
     
+    UIImageView *issuePriorityView = (UIImageView*)[cell viewWithTag:5];
+    if([issue.issuePriority isEqualToString:@"Major"]){
+        issuePriorityView.image = [UIImage imageNamed:@"priority_major.png"];
+    }
+    
+    UIImageView *issueTypeView = (UIImageView*)[cell viewWithTag:6];
+    if([issue.issueTypeName isEqualToString:@"Bug (Rework Dev)"]){
+        issueTypeView.image = [UIImage imageNamed:@"issue_type_bug@2x.png"];
+    }
+    else if([issue.issueTypeName isEqualToString:@"Task (Sub-Task)"]){
+        issueTypeView.image = [UIImage imageNamed:@""];
+    }
+    else if([issue.issueTypeName isEqualToString:@"Story (functional)"]){
+        issueTypeView.image = [UIImage imageNamed:@""];
+    }
+    else if([issue.issueTypeName isEqualToString:@"Task (Sub-Task)"]){
+        issueTypeView.image = [UIImage imageNamed:@""];
+    }
+    
+    UIImageView *issueStatusView = (UIImageView*)[cell viewWithTag:7];
+    if([issue.issueStatus isEqualToString:@"Closed"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_closed.png"];
+    }
+    else if([issue.issueStatus isEqualToString:@"Open"]){
+        issueStatusView.image = [UIImage imageNamed:@""];
+    }
+    else if([issue.issueStatus isEqualToString:@"Resolved"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_resolved.png"];
+    }
+    else if([issue.issueStatus isEqualToString:@"In Progress"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_inprogress.png"];
+    }
+    else if([issue.issueStatus isEqualToString:@"Reopened"]){
+        issueStatusView.image = [UIImage imageNamed:@"status_reopened.png"];
+    }
     return cell;
 }
 
