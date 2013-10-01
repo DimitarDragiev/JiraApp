@@ -102,7 +102,7 @@
        
        Project *project = [projects objectAtIndex:0];
        NSLog(@"%@", project);
-      UINavigationController *navController =[self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+      UINavigationController *navController =[self.storyboard instantiateViewControllerWithIdentifier:@"MainNavigationController"];
 //       [navController.view.window makeKeyAndVisible];
        [self presentViewController:navController animated:YES completion:nil];
    } andFailureBlock:^(NSError *error) {

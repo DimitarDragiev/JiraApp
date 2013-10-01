@@ -11,9 +11,7 @@
 @interface ProjectManager : NSObject
 
 @property (nonatomic,strong) NSMutableArray * projects;
-@property (nonatomic, copy) NSString *currentProjectID;
 + (ProjectManager *)sharedManager;
-
 -(void)setUpWithServerResponse:(NSArray*) dataArray;
 
 @end

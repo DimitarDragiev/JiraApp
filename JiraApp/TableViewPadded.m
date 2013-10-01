@@ -30,7 +30,6 @@
     return self;
 }
 
-
 -(void)setFrame:(CGRect)frame{
     frame.size.width = frame.size.width - padding*2;
     frame.origin.x = padding;

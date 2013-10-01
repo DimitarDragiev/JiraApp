@@ -9,18 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Project.h"
 
-
-@interface ProjectDetailsViewController : UITableViewController <UITextFieldDelegate>
-{
-    // 
-}
-
-@property(nonatomic,strong) UITableView *tableView;
-
+@interface ProjectDetailsViewController : UITableViewController
 @property(nonatomic, strong) NSString *projectKey;
 @property(nonatomic, strong) NSString *projectDescription;
 @property(nonatomic, strong) NSString *projectOwner;
 @property(nonatomic, strong) NSMutableArray *issues;
 @property(nonatomic, strong) Project *currentProject;
-
 @end

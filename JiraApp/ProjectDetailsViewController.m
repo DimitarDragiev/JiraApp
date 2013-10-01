@@ -10,11 +10,7 @@
 #import "JiraRestClientAPI.h"
 #import "IssueDetailsViewController.h"
 #import "Project.h"
-#import "ProjectManager.h"
 #import "Issue.h"
-#import <UIButton+NUI.h>
-#import <NUIRenderer.h>
-#import <UIViewController+MMDrawerController.h>
 
 @interface ProjectDetailsViewController ()
 
@@ -22,51 +18,18 @@
 
 @implementation ProjectDetailsViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithCoder:aDecoder];
+    self = [super initWithStyle:style];
     if (self) {
-        self.projectKey = [ProjectManager sharedManager].currentProjectID;
+        // Custom initialization
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
-    
-//    UIBarButtonItem *_sidebarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-//                                                                                    target:self action:@selector(toggleRightDrawer)];
-    UIImage *searchButtonImg = [UIImage imageNamed:@"search_icon"];
-//    UIBarButtonItem *_sidebarButton = [[UIBarButtonItem alloc]initWithImage:backButtonImg style:UIBarButtonItemStylePlain target:self action:@selector(toggleRightDrawer)];
-    UIButton *searchButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 30)];
-    [searchButton setImage:searchButtonImg forState:UIControlStateNormal];
-    [searchButton setNuiClass:@"BarButton"];
-    UIBarButtonItem *_sidebarButton = [[UIBarButtonItem alloc]initWithCustomView:searchButton];
-    [searchButton addTarget:self action:@selector(toggleRightDrawer) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *backButtonImg = [UIImage imageNamed:@"icon_back"];
-//    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithImage:backButtonImg style:UIBarButtonItemStyleBordered target:nil action:nil];
-//    self.parentViewController.navigationItem.backBarButtonItem = btn;
-    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 30)];
-    [backButton setImage:backButtonImg forState:UIControlStateNormal];
-    [backButton setNuiClass:@"BarButton"];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [backButton addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
-    self.parentViewController.navigationItem.leftBarButtonItem = backButtonItem;
-    self.parentViewController.navigationItem.rightBarButtonItem = _sidebarButton;
-//    [NUIRenderer renderBarButtonItem:_sidebarButton withClass:@"BarButton"];
-//    [NUIRenderer renderNavigationItem:self.parentViewController.navigationItem.rightBarButtonItem];
-    
-    
-    
-    
-    // Set the gesture
-    
-//    [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectDetails"];
-
-
-    
 	// Do any additional setup after loading the view.
     self.issues = [NSMutableArray new];
     [[JiraRestClientAPI sharedClient] getProjectDetailsWithKey: self.projectKey andSuccessBlock:^(Project *data) {
@@ -92,13 +55,6 @@
     
 }
 
--(void)popViewController{
-    [ self.navigationController popViewControllerAnimated:YES];
-}
-
--(void)toggleRightDrawer{
-    [self.mm_drawerController toggleDrawerSide: MMDrawerSideRight animated: YES completion: nil];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -233,10 +189,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-}
--(BOOL)textfieldShouldReturn:(UITextField*)texfield{
-    [texfield resignFirstResponder];
-    return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

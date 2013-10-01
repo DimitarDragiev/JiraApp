@@ -11,7 +11,6 @@
 
 @implementation ProjectManager
 @synthesize projects;
-
 + (ProjectManager *)sharedManager {
     static ProjectManager *_sharedManager = nil;
     static dispatch_once_t onceToken;
