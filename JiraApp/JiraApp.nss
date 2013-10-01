@@ -10,12 +10,13 @@
 @secondaryBackgroundColorBottom: #F9F9F9;
 @primaryBorderColor: #DDD7D2;
 @primaryBorderWidth: 1;
+@topbackroundcolor :#E5174B;
 
 BarButton {
-    background-color-top: @primaryBackgroundColorTop;
-    background-color-bottom: @primaryBackgroundColorBottom;
+    background-color-top: @topbackroundcolor;
+    background-color-bottom: @topbackroundcolor;
     border-color: #BFC0C3;
-    border-width: 1;
+    border-width: 0;
     corner-radius: 6;
     font-name: @primaryFontName;
     font-color: @secondaryFontColor;

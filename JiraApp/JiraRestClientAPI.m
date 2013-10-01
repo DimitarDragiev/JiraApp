@@ -63,10 +63,11 @@ static NSString *const JiraAppRequestCentreURLString = @"https://jira01.isdc.eu/
     }
 }
 -(void)getProjectDetailsWithKey:(NSString*)key andSuccessBlock: (void(^)(id project)) success andFailureBlock:(void (^)(NSError *error)) fail{
-    NSString *path = @"project/";
-    NSString *path2 = [path stringByAppendingString: key];
-    [[self.class sharedClient] getPath:path2 parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+    NSString *path = [NSString stringWithFormat:@"project/%@", key];
+
+    [[self.class sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
         if(success){
+            NSLog(@"%@", responseObject);
             Project *project = [[Project alloc] initWithJSON:responseObject];
             success(project);
             /*NSLog(@"%@", [responseObject objectForKey:@"description"]);

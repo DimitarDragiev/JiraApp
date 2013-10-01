@@ -11,6 +11,9 @@
 #import "Project.h"
 #import "ProjectDetailsViewController.h"
 #import "ProjectListCell.h"
+#import "IssueFilterViewController.h"
+#import "MainNavigationViewController.h"
+#import <MMDrawerController.h>
 @interface ProjectListViewController ()
 
 @end
@@ -32,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+//    [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectDetails"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -117,22 +120,37 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    Project *project = [[self projectList] objectAtIndex: indexPath.row];
+    ProjectDetailsViewController* projectDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectDetails"];
+    projectDetailsVC.projectKey = [project key];
+    [ProjectManager sharedManager].currentProjectID = [project.key copy];
+    
+    ProjectDetailsViewController *pDetails = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectDetails"];
+    IssueFilterViewController *issueFilterVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FilterVC"];
+    MMDrawerController *drawerVC = [[MMDrawerController alloc] initWithCenterViewController:pDetails rightDrawerViewController:issueFilterVC];
+    [drawerVC setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningCenterView];
+    [drawerVC setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [self.navigationController pushViewController:drawerVC animated:YES];
+ 
+//
+////    SWRevealViewController* reveal = [self.storyboard instantiateViewControllerWithIdentifier:@"RevealVC"];
+////    reveal.frontViewController = projectDetailsVC;
+//    
+//    [self.navigationController pushViewController:projectDetailsVC animated:YES];
+//    [self performSegueWithIdentifier:@"showProjectDetails" sender:self];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    Project *project = [[self projectList] objectAtIndex:indexPath.row];
-    if ([segue.identifier isEqualToString:@"showProjectDetails"]) {
-        ProjectDetailsViewController *destViewController = segue.destinationViewController;
-        destViewController.projectKey = [project key];
-    }
-    
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//     SWRevealViewController * revealViewController = segue.destinationViewController;
+//    revealViewController.frontViewPosition = FrontViewPositionRightMost;
+////    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+////    Project *project = [[self projectList] objectAtIndex:indexPath.row];
+////    if ([segue.identifier isEqualToString:@"showProjectDetails"]) {
+////        SWRevealViewController * destViewController = segue.destinationViewController;
+////        NSLog(@"%@", destViewController.frontViewController);
+////        ProjectDetailsViewController *projectDetailsVC = destViewController.frontViewController;
+////        projectDetailsVC.projectKey = [project key];
+////    }
+////    
+//}
 @end
